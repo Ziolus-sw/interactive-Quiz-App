@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  /* font:; */
+}
+body {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background-color: #222020;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: clamp(50px, 100%, 600px);
+  background-color: whitesmoke;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.968);
+  overflow: hidden;
+  position: relative;
+}
+.screen {
+  display: none;
+  padding: 2rem;
+  text-align: center;
+}
+
+.screen.active {
+  display: block;
+}
+
+/*START SCREEN  */
+
+
+#start-screen h1 {
+  color: #e86a33;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+#start-screen p {
+  color: #2e2b2b;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+.quiz-header{
+  margin-bottom: 1rem ;
+}
+.quiz-header h2{
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+ line-height: 1.4;
+}
+.quiz-info{
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  margin-bottom: 1rem;
+
+}
+
+.answers-container{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin-bottom: 1.8rem;
+}
+.answer-btn{
+  background-color: #e6ceae;
+  color:#333 ;
+  border-radius:0.8rem;
+  padding: 1rem;
+  
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+  border:solid 1px transparent;
+}
+.answer-btn:hover:not(.clicked){
+  background-color: #d6693a;
+  border:solid 1.2px;
+  border-color: #343030;
+  transform: scale(1.02);
+
+}
+.answer-btn.correct {
+  background-color: #e6fff0;
+  border: solid 1px #009e44;
+  color: #2ba147;
+}
+.forward-btn, .back-btn{
+  width:2.5em;
+  height: 1.5em;
+  font-size: 1.5rem;
+  background-color:#d6693a;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.answer-btn.incorrect {
+  background-color: #f7cfcf;
+  border-color: #b00e0e;
+  color: #dc3545;
+}
+.answer-btn.selected {
+  border: solid 1px #000000;
+}
+.answer-status {
+  min-height: 24px;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e86a33;
+  text-align: center;
+}
+.back-for-progress{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  width: 100%;
+  height: 20px;
+  margin-top: 1rem;
+}
+.progress-bar {
+  height: 10px;
+  background-color: #f8f0e5;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 60%
+  
+}
+.progress {
+  height: 100%;
+  background-color: #e86a33;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+.forward-btn{
+  display: flex;align-content: center;
+  justify-content: center;
+}
+
+/* RESULT SCREEN */
+
+#result-screen h1 {
+  font-size: 1.8rem;
+  color: #e86a33;
+  margin-bottom: 1.8rem;
+
+}
+.result-info p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+#result-message {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #e86a33;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #e86a33;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8em 1.7em;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d6693a;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 500px) {
+  /* when we hit 500px and below, implement the styles below */
+
+  .screen {
+    padding: 1rem;
+  }
+
+  #start-screen h1 {
+    font-size: 1.8rem;
+  }
+  #start-screen p{
+    font-size: 1rem;
+  }
+
+  #question-text {
+    font-size: 1.3rem;
+  }
+
+  .answer-btn {
+    padding: 12px;
+  }
+
+  button {
+    /* padding: 12px 25px; */
+    font-size: 1rem;
+  }
+  .forward-btn, .back-btn{
+  
+  font-size: 0.8rem;
+;
+}
+}
+
